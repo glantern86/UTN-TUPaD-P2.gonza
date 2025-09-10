@@ -39,6 +39,8 @@ public class Ejercicio03 {
         //tomo como referencia el año de publicacion de la biblia de gutenberg
         if (anio >= 1454) {
         this.anioPublicacion = anio;
+                } else {
+        System.out.println("El año "+anio+" no es un año válido de publicación");
                 }
         }
         
@@ -46,6 +48,8 @@ public class Ejercicio03 {
     
         public void main(String[] args) {
         Libro e1 = new Libro("El Resplandor", "Stephen King", 1980);
+        System.out.println("El nombre del libro es "+e1.getTitulo()+" escrito por "+e1.getAutor()+" en el año " +e1.getAnioPublicacion());
+        e1.setAnioPublicacion(1000);
         System.out.println("El nombre del libro es "+e1.getTitulo()+" escrito por "+e1.getAutor()+" en el año " +e1.getAnioPublicacion());
         e1.setAnioPublicacion(1977);
         System.out.println("El nombre del libro es "+e1.getTitulo()+" escrito por "+e1.getAutor()+" en el año " +e1.getAnioPublicacion());
