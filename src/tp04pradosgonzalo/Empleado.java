@@ -24,7 +24,7 @@ public class Empleado {
         totalEmpleados++;
     }    
     
-        public Empleado(String nombre, String puesto) {
+    public Empleado(String nombre, String puesto) {
         this.nombre = nombre;
         this.puesto = puesto;
         salario=1000;
