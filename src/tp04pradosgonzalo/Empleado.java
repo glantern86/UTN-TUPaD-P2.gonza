@@ -32,14 +32,31 @@ public class Empleado {
         totalEmpleados++;
     }
     
-    public String getDatos() {
+    @Override
+    public String toString() {
        return "ID "+ id + "\nNombre: " + nombre
                + "\nPuesto: " + puesto + "\nSalario: "+ salario +"\nTotal empleados: " +
                totalEmpleados+"\n---------------------";
     }
     
     public double setActualizarSalario(int porcentaje){
+        if (porcentaje < 0 ){
+        System.out.println("El aumento no puede ser nagativo. "
+                + "El aumento ingresado era de "+porcentaje+"%");
+        return salario;
+        } else {
         this.salario = salario + (salario * porcentaje / 100.0);
         return salario;
+        }
+    }
+    
+    //estoy partiendo de la base de que como mínimo toda actualizacion salarial es del 10%
+    public double setActualizarSalario(){
+        this.salario = salario + (salario * 0.1);
+        return salario;
+    }
+    
+    public static int mostrarTotalEmpleados(){
+        return totalEmpleados;
     }
 }
