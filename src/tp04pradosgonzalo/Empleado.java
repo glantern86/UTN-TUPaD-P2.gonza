@@ -57,6 +57,6 @@ public class Empleado {
     }
     
     public static int mostrarTotalEmpleados(){
-        return totalEmpleados;
+        return Empleado.totalEmpleados;
     }
 }
