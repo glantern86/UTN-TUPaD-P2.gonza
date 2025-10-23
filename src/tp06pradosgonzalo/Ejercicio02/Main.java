@@ -9,49 +9,50 @@ import tp06pradosgonzalo.Ejercicio01.*;
 public class Main {
 
     public static void main(String[] args) {
-        //1. Crear al menos cinco productos con diferentes categorías y agregarlos al inventario.
-        System.out.println("\n=== CREAR 5 PRODUCTOS ===");
-        Inventario inventario = new Inventario();
-        
-        Producto tomate = new Producto("A001","Tomate", 3000.00, 100, CategoriaProducto.ALIMENTOS);
-        Producto jeans = new Producto("B001","Jean", 5000.00, 75, CategoriaProducto.ROPA);
-        Producto afeitadora = new Producto("C001","Afeitadora Epson multicuchilla", 9000.00, 100, CategoriaProducto.HOGAR);
-        Producto mp4 = new Producto("D001","MP4 Hitachi", 15000.00, 8, CategoriaProducto.ELECTRONICA);
-        Producto manzanas = new Producto("A002","Manzana deliciosa", 5000.00, 50, CategoriaProducto.ALIMENTOS);
-        
-        inventario.agregarProducto(tomate);
-        inventario.agregarProducto(jeans);
-        inventario.agregarProducto(afeitadora);
-        inventario.agregarProducto(mp4);
-        inventario.agregarProducto(manzanas);
-        
-        //2. Listar todos los productos mostrando su información y categoría.
-        System.out.println("\n=== LISTAR PRODUCTOS ===");
-        inventario.listarProductos();
-        //3. Buscar un producto por ID y mostrar su información.
-        System.out.println("\n=== BUSCAR PRODUCTOS: ID C001 ===");
-        inventario.buscarProductoPorId("C001");
-        //4. Filtrar y mostrar productos que pertenezcan a una categoría específica.
-        System.out.println("\n=== FILTRAR PRODUCTOS: ALIMENTOS ===");
-        inventario.filtrarPorCategoria(CategoriaProducto.ALIMENTOS);
-        //5. Eliminar un producto por su ID y listar los productos restantes.
-        System.out.println("\n=== ELIMINAR PRODUCTO A002 Y LISTAR RESTANTES ===");
-        inventario.eliminarProducto("A002");
-        inventario.listarProductos();
-        //6. Actualizar el stock de un producto existente.
-        System.out.println("\n=== ACTUALIZAR STOCK ===");
-        inventario.actualizarStock("D001", 15);
-        //7. Mostrar el total de stock disponible.
-        System.out.println("\n=== MOSTRAR STOCK ===");
-        inventario.obtenerTotalStock();
-        //8. Obtener y mostrar el producto con mayor stock
-        System.out.println("\n=== MOSTRAR PRODUCTO CON MAYOR STOCK ===");
-        inventario.obtenerProductoConMayorStock();
-        //9. Filtrar productos con precios entre $1000 y $3000.
-        System.out.println("\n=== FILTRAR ENTRE PRECIOS $1000 Y $3000 ===");
-        inventario.filtrarProductosPorPrecio(1000.00, 3000.00);
-        //10. Mostrar las categorías disponibles con sus descripciones.
-        System.out.println("\n=== MOSTRAR CATEGORIAS Y DESCRIPCIONES ===");
-        inventario.mostrarCategoriasDisponibles();
+
+        //1. Creamos una biblioteca.
+        System.out.println("\n=== CREAR UNA BIBLIOTECA ===");
+        Biblioteca biblioteca = new Biblioteca("Biblioteca Nacional");
+
+        //2. Crear al menos tres autores
+        System.out.println("\n=== CREAR AUTORES ===");
+        Autor autor1 = new Autor("A001", "Gabriel García Márquez", "Colombiano");
+        Autor autor2 = new Autor("A002", "Jorge Luis Borges", "Argentino");
+        Autor autor3 = new Autor("A003", "Julio Cortázar", "Argentino");
+
+        //3. Agregar 5 libros asociados a alguno de los Autores a la biblioteca.
+        System.out.println("\n=== AGREGAR LIBROS ===");
+        biblioteca.agregarLibro("978-8437604947", "Cien años de soledad", 1967, autor1);
+        biblioteca.agregarLibro("978-8420673840", "Ficciones", 1944, autor2);
+        biblioteca.agregarLibro("978-8437604948", "El otoño del patriarca", 1975, autor1);
+        biblioteca.agregarLibro("978-8472234455", "Rayuela", 1963, autor3);
+        biblioteca.agregarLibro("978-8420673857", "El Aleph", 1949, autor2);
+
+        //4. Listar todos los libros con su información y la del autor.
+        System.out.println("\n=== LISTAR TODOS LOS LIBROS ===");
+        biblioteca.listarLibros();
+
+        //5. Buscar un libro por su ISBN y mostrar su información.
+        System.out.println("\n=== BUSCAR LIBRO POR ISBN ===");
+        biblioteca.buscarLibroPorIsbn("978-8437604947");
+
+        //6. Filtrar y mostrar los libros publicados en un año específico.
+        System.out.println("\n=== FILTRAR LIBROS POR AÑO 1944 ===");
+        biblioteca.filtrarLibrosPorAnio(1944);
+
+        //7. Eliminar un libro por su ISBN y listar los libros restantes.
+        System.out.println("\n=== ELIMINAR LIBRO ===");
+        biblioteca.eliminarLibro("978-8472234455");
+
+        System.out.println("\n=== LIBROS RESTANTES ===");
+        biblioteca.listarLibros();
+
+        //8. Mostrar la cantidad total de libros en la biblioteca.
+        System.out.println("\n=== CANTIDAD TOTAL DE LIBROS ===");
+        biblioteca.obtenerCantidadLibros();
+
+        //9. Listar todos los autores de los libros disponibles en la biblioteca.
+        System.out.println("\n=== AUTORES DISPONIBLES ===");
+        biblioteca.mostrarAutoresDisponibles();
     }
 }

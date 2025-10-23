@@ -20,13 +20,28 @@ public class Libro {
         this.anioPublicacion = anioPublicacion;
         this.autor = autor;
     } 
- 
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public int getAnioPublicacion() {
+        return anioPublicacion;
+    }
+
+    public Autor getAutor() {
+        return autor;
+    }
+    
     public void mostrarInfo() {
-        System.out.println("ISBN: "+isbn+ 
-                "\nTítulo: "+ titulo+
-                "\nAño de publicación: " +anioPublicacion+
-                "\nAutor: "+ autor
-        );
+        System.out.println("ISBN: "+getIsbn()+ 
+                "\nTítulo: "+ getTitulo()+
+                "\nAño de publicación: " +getAnioPublicacion()+
+                "\nAutor: "+ getAutor());
     }
     
     

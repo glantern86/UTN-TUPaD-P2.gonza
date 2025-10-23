@@ -18,11 +18,25 @@ public class Autor {
         this.nombre = nombre;
         this.nacionalidad = nacionalidad;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getNacionalidad() {
+        return nacionalidad;
+    }
+    
+    
           
     public void mostrarInfo() {
-        System.out.println("Id: "+id+ 
-                "\nNombre: "+ nombre+
-                "\nNacionalidad: " +nacionalidad);
+        System.out.println("\nId: "+getId()+ 
+                "\nNombre: "+ getNombre()+
+                "\nNacionalidad: " +getNacionalidad());
     }
     
 }
