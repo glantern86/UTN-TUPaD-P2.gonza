@@ -14,6 +14,12 @@ public class Universidad {
     private String nombre;
     private ArrayList<Profesor> profesores;
     private ArrayList<Curso> cursos;
+
+    public Universidad(String nombre, ArrayList<Profesor> profesores, ArrayList<Curso> cursos) {
+        this.nombre = nombre;
+        this.profesores = profesores;
+        this.cursos = cursos;
+    }   
     
 public void agregarCurso(Curso curso) {
         if (curso != null && !cursos.contains(curso)) {
